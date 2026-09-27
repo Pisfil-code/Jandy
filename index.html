@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Jandy ♡</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #09070b;
+            color: #f7edf1;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FONDO
+        ========================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(133, 58, 88, .18), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(89, 43, 78, .14), transparent 35%),
+                #09070b;
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            pointer-events: none;
+            opacity: .6;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: .15;
+            }
+
+            50% {
+                opacity: .8;
+            }
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            animation: fadeUp 1.8s ease forwards;
+        }
+
+        .tiny {
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #b995a5;
+            margin-bottom: 35px;
+        }
+
+        .intro h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(70px, 14vw, 150px);
+            font-weight: 300;
+            line-height: .8;
+            letter-spacing: -5px;
+        }
+
+        .intro h1 span {
+            color: #d99aae;
+        }
+
+        .subtitle {
+            margin-top: 45px;
+            color: #bdb1b7;
+            font-size: 14px;
+            letter-spacing: 2px;
+            line-height: 2;
+        }
+
+        .start-btn {
+            margin-top: 50px;
+            background: transparent;
+            border: 1px solid rgba(220, 154, 174, .5);
+            color: #f5dce4;
+            padding: 15px 32px;
+            border-radius: 40px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .start-btn:hover {
+            background: rgba(217, 154, 174, .1);
+            border-color: #d99aae;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(217, 154, 174, .12);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 30px;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #746b70;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 25px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .section-number {
+            color: #b8758c;
+            font-size: 11px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(45px, 7vw, 75px);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 45px;
+        }
+
+        .text {
+            color: #c6bbc0;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 2.2;
+            max-width: 720px;
+        }
+
+        .text strong {
+            color: #f1d5de;
+            font-weight: 400;
+        }
+
+        .quote {
+            margin-top: 50px;
+            padding-left: 25px;
+            border-left: 1px solid #a55e77;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(27px, 4vw, 40px);
+            font-style: italic;
+            color: #e7c8d2;
+            line-height: 1.3;
+        }
+
+        /* =========================
+           TERMINAL
+        ========================= */
+
+        .terminal {
+            margin-top: 60px;
+            background: rgba(15, 12, 17, .9);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .4);
+        }
+
+        .terminal-header {
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, .03);
+            display: flex;
+            gap: 7px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #55464d;
+        }
+
+        .terminal-body {
+            padding: 25px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 2;
+            color: #9eb6a4;
+        }
+
+        .terminal-body .pink {
+            color: #d99aae;
+        }
+
+        .terminal-body .white {
+            color: #e8dfe3;
+        }
+
+        /* =========================
+           PROMESA
+        ========================= */
+
+        .promise-box {
+            margin-top: 60px;
+            padding: 45px;
+            border: 1px solid rgba(217, 154, 174, .18);
+            background: linear-gradient(145deg,
+                    rgba(217, 154, 174, .04),
+                    rgba(255, 255, 255, .015));
+            border-radius: 4px;
+        }
+
+        .promise-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            line-height: 1.7;
+            color: #ddcbd1;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final {
+            text-align: center;
+        }
+
+        .final .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .final h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(50px, 9vw, 100px);
+            line-height: .95;
+        }
+
+        .final h2 span {
+            color: #d99aae;
+        }
+
+        .final-text {
+            max-width: 650px;
+            margin-top: 45px;
+            color: #bfb3b9;
+            line-height: 2;
+            font-size: 15px;
+        }
+
+        .heart {
+            margin-top: 55px;
+            font-size: 30px;
+            color: #d99aae;
+            animation: heartbeat 1.8s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            10% {
+                transform: scale(1.2);
+            }
+
+            20% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(1.15);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .signature {
+            margin-top: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 27px;
+            color: #e5ccd5;
+        }
+
+        .footer {
+            padding: 30px;
+            text-align: center;
+            color: #51494e;
+            font-size: 9px;
+            letter-spacing: 3px;
+        }
+
+        /* =========================
+           REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:600px) {
+
+            section {
+                padding: 80px 22px;
+            }
+
+            .promise-box {
+                padding: 28px;
+            }
+
+            .promise-box p {
+                font-size: 23px;
+            }
+
+            .terminal-body {
+                font-size: 11px;
+            }
+        }
+
+        /* =========================
+   BOTÓN DE MÚSICA
+========================= */
+
+        .music-btn {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 1000;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+            border: 1px solid rgba(217, 154, 174, .4);
+
+            background: rgba(15, 12, 17, .75);
+            backdrop-filter: blur(10px);
+
+            color: #d99aae;
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: .4s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            border-color: #d99aae;
+            box-shadow: 0 0 25px rgba(217, 154, 174, .2);
+        }
+
+        .music-btn.playing {
+            animation: musicPulse 2s infinite;
+        }
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 rgba(217, 154, 174, 0);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(217, 154, 174, .25);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+    <!-- =========================
+     MÚSICA
+    ========================= -->
+
+    <audio id="music" loop>
+        <source src="Río Roma - Tan Sólo un Minuto (Cover Audio).mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicBtn" class="music-btn" onclick="toggleMusic()">
+        ♫
+    </button>
+
+    <div class="stars" id="stars"></div>
+
+    <!-- =========================
+     INTRO
+    ========================= -->
+
+    <header class="intro" id="inicio">
+
+        <div class="intro-content">
+
+            <div class="tiny">
+                una pequeña cosa para ti
+            </div>
+
+            <h1>
+                Jandy<span>♡</span>
+            </h1>
+
+            <div class="subtitle">
+                Hay cosas que no avisan.<br>
+                Algunas simplemente se van descubriendo.
+            </div>
+            
+            <button class="start-btn" onclick="document.getElementById('historia').scrollIntoView({behavior:'smooth'})">
+                DESCUBRIR
+            </button>
+
+        </div>
+
+        <div class="scroll">
+            ↓ DESLIZA
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     SECCIÓN 01
+========================= -->
+
+    <section id="historia">
+
+        <div class="container reveal">
+
+            <div class="section-number">
+                01 — PARA TI
+            </div>
+
+            <h2 class="section-title">
+                Hola, Jandy.
+            </h2>
+
+            <p class="text">
+
+                Esta página tiene un solo propósito.<br><br>
+
+                Ser dedica a ti. A ti, que me haces sentir cosas que no sabía que podía sentir.<br><br>
+
+                <br><br>
+
+                Es mi manera de decirte algunas cosas
+                que quizá todavía no sé cómo decirte mirándote a los ojos.
+
+                <br><br>
+
+                Sé que me abriste tu corazón.
+
+                <br><br>
+
+                Y no voy a mentirte...
+
+                <strong>
+                    Escucharte hizo muy feliz.
+                </strong>
+
+            </p>
+
+            <div class="quote">
+                "Porque cuando alguien empieza a importarte,
+                comienzas a notar cada detalle que hace que esa persona sea única."
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SECCIÓN 02
+========================= -->
+
+    <section>
+
+        <div class="container reveal">
+
+            <div class="section-number">
+                02 — LO QUE SIENTO
+            </div>
+
+            <h2 class="section-title">
+                Quizá empezó sin avisar.
+            </h2>
+
+            <p class="text">
+
+                No sé exactamente en qué momento empezó (Si sé como empezó).
+
+                <br><br>
+
+                Quizá fue esa conversación.
+
+                <br>
+
+                Quizá tu hermosa sonrisa.
+
+                <br>
+
+                Quizá esa sensación de querer seguir hablando contigo
+                incluso cuando ya no había nada más que decir.
+
+                <br><br>
+
+                Pero hay algo que sí sé.
+
+                <br><br>
+
+                <strong>Me gustas, Jandy.</strong>
+
+                <br><br>
+
+                Y precisamente porque me gustas,
+                no quiero arruinar nada.
+
+                <br><br>
+
+                Quiero conocerte.
+
+                De verdad.
+
+                No solamente la versión bonita que todos pueden ver,
+                sino también esa parte de ti que quizá no le enseñas a cualquiera.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SECCIÓN 03
+========================= -->
+
+    <section>
+
+        <div class="container reveal">
+
+            <div class="section-number">
+                03 — UNA PEQUEÑA CONFESIÓN
+            </div>
+
+            <h2 class="section-title">
+                Me atrajiste desde el momento en que te vi...
+            </h2>
+
+            <p class="text">
+
+                Desde el momento en que te acercaste a mí, y solo era tu paciente.
+
+                <br><br>
+
+                No quiero aparecer en tu vida solamente para
+                hacerte sentir especial durante un momento
+                y después desaparecer.
+
+                <br><br>
+
+                No quiero decirte cosas bonitas si no pienso
+                respaldarlas con mis acciones.
+
+                <br><br>
+
+                Y mucho menos quiero convertirme
+                en una razón para que algún día
+                tengas que recoger los pedacitos de tu corazón.
+
+            </p>
+
+            <div class="promise-box">
+
+                <p>
+                    No quiero entrar en tu vida para romperte el corazón.
+                    <br><br>
+                    Quiero conocerte lo suficiente como para
+                    aprender a cuidarlo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SECCIÓN 04
+========================= -->
+
+    <section>
+
+        <div class="container reveal">
+
+            <div class="section-number">
+                04 — SIN PROMESAS IMPOSIBLES
+            </div>
+
+            <h2 class="section-title">
+                No voy a prometerte
+                un cuento perfecto.
+            </h2>
+
+            <p class="text">
+
+                No sé qué nos espera.
+
+                <br><br>
+
+                No sé cuánto vamos a cambiar.
+
+                <br>
+
+                No sé dónde estaremos dentro de un año.
+
+                <br><br>
+
+                Y creo que nadie debería prometer
+                cosas que todavía no puede saber.
+
+                <br><br>
+
+                Pero sí puedo decirte algo:
+
+            </p>
+
+            <div class="quote">
+
+                Quiero estar a tu lado
+                y son con intenciones bonitas.
+                Con sinceridad.
+                Con respeto.
+                Y con el propósito de hacerte sonreír
+                en cada momento.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SECCIÓN 05
+========================= -->
+
+    <section>
+
+        <div class="container reveal">
+
+            <div class="section-number">
+                05 — ENTRE NOSOTROS
+            </div>
+
+            <h2 class="section-title">
+                Y como buen ingeniero...
+            </h2>
+
+            <p class="text">
+
+                supongo que debería dejar algunas cosas claras.
+
+            </p>
+
+            <div class="terminal">
+
+                <div class="terminal-header">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <div class="terminal-body">
+
+                    <div>
+                        <span class="pink">project</span> = "Jandy & Brandom";
+                    </div>
+
+                    <div>
+                        <span class="pink">status</span> =
+                        <span class="white">"Sonriendo siempre"</span>;
+                    </div>
+
+                    <br>
+
+                    <div>
+                        confianza = <span class="white">true</span>;
+                    </div>
+
+                    <div>
+                        honestidad = <span class="white">true</span>;
+                    </div>
+
+                    <div>
+                        respeto = <span class="white">true</span>;
+                    </div>
+
+                    <div>
+                        fidelidad = <span class="white">true</span>;
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <span class="pink">if</span> (sentimientos) {
+                    </div>
+
+                    <div style="padding-left:20px;">
+                        cuidar_lo_que_nace();
+                    </div>
+
+                    <div>
+                        }
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <span class="pink">return</span>
+                        <span class="white">"Vamos juntos!";</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SECCIÓN FINAL
+========================= -->
+
+    <section class="final">
+
+        <div class="container reveal">
+
+            <div class="section-number">
+                06 — SONRIE, QUE TU SONRISA ES MI CURVA FAVORITA
+            </div>
+
+            <h2>
+                Sé que...<br>
+                hay temor, pero debemos ser<br>
+                <span>"nosotros".</span>
+            </h2>
+
+            <p class="final-text">
+
+                Me gusta mucho la idea de descubrir
+                nuestro día a día.
+
+                <br><br>
+
+                Solo quiero verte sonreír.
+
+                <br>
+
+                Solo quiero hacerte feliz.
+
+                <br>
+
+                Quiero que lo que tengamos sea único y especial.
+
+                <br><br>
+
+                Solo quiero seguir conociéndote.
+                
+                <br><br>
+
+                Sonriendo siempre.
+
+                <br>
+
+                No quiero que te vayas nunca de mi vida.
+
+            </p>
+
+            <div class="heart">
+                ♡
+            </div>
+
+            <div class="signature">
+                Para Jandy,<br>
+                con cariño.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="footer">
+        MADE WITH INTENTION · NOT WITH ALGORITHMS ♡
+    </div>
+
+
+    <script>
+
+        /* =========================
+           ESTRELLAS
+        ========================= */
+
+        const stars = document.getElementById("stars");
+
+        for (let i = 0; i < 90; i++) {
+
+            const star = document.createElement("div");
+
+            star.classList.add("star");
+
+            star.style.left = Math.random() * 100 + "%";
+            star.style.top = Math.random() * 100 + "%";
+
+            star.style.animationDelay =
+                Math.random() * 3 + "s";
+
+            star.style.opacity =
+                Math.random() * .6;
+
+            stars.appendChild(star);
+        }
+
+
+        /* =========================
+           REVEAL AL HACER SCROLL
+        ========================= */
+
+        const elements =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        elements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+
+        /* =========================
+           MENSAJE EN CONSOLA
+        ========================= */
+
+        console.log(
+            "%cJandy ♡",
+            "font-size:25px;color:#d99aae;"
+        );
+
+        console.log(
+            "%cSi llegaste hasta aquí, probablemente descubriste el pequeño secreto.",
+            "font-size:13px;color:#c6bbc0;"
+        );
+
+        console.log(
+            "%cNo todo lo importante necesita un algoritmo.",
+            "font-size:13px;color:#e7c8d2;"
+        );
+
+        /* =========================
+   MÚSICA
+========================= */
+
+        const music = document.getElementById("music");
+        const musicBtn = document.getElementById("musicBtn");
+
+        function startMusic() {
+
+            music.volume = 0.35;
+
+            music.play()
+                .then(() => {
+
+                    musicBtn.classList.add("playing");
+                    musicBtn.innerHTML = "♫";
+
+                })
+                .catch(error => {
+
+                    console.log("La música necesita interacción del usuario.");
+
+                });
+
+        }
+
+
+        /* La música comienza cuando ella pulsa DESCUBRIR */
+
+        document.querySelector(".start-btn").addEventListener("click", () => {
+
+            startMusic();
+
+        });
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                musicBtn.classList.add("playing");
+                musicBtn.innerHTML = "♫";
+
+            } else {
+
+                music.pause();
+
+                musicBtn.classList.remove("playing");
+                musicBtn.innerHTML = "🔇";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
